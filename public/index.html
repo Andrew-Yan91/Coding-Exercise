@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ info }}
+    </div>
+    <script type="text/javascript">
+
+new Vue({
+  el: '#app',
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted () {
+    axios
+      .get('https://coding-task.strakertranslations.com/passengers')
+      .then(response => (this.info = response))
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+})
+
+
+    </script>
+    <div class="container">
+        <h2>passengers</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Survived</th>
+                    <th>Class</th>
+                    <th>Name</th>
+                    <th>Sex</th>
+                    <th>Age</th>
+                    <th>Siblings</th>
+                    <th>Parch</th>
+                    <th>Ticket</th>
+                    <th>Fare</th>
+                    <th>Cabin</th>
+                    <th>Embarked</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{item.ID}}</td>
+                    <td>{{item.Survived }}</td>
+                    <td>{{item.Class }}</td>
+                    <td>{{item.Name}}</td>
+                    <td>{{item.Sex}}</td>
+                    <td>{{item.Age}}</td>
+                    <td>{{item.Siblings }}</td>
+                    <td>{{item.Parch }}</td>
+                    <td>{{item.Ticket}}</td>
+                    <td>{{item.Fare}}</td>
+                    <td>{{item.Cabin}}</td>
+                    <td>{{item.Embarked }}</td>
+                </tr>
+                <tr>
+                    <td>{{item.ID}}</td>
+                    <td>{{item.Survived }}</td>
+                    <td>{{item.Class }}</td>
+                    <td>{{item.Name}}</td>
+                    <td>{{item.Sex}}</td>
+                    <td>{{item.Age}}</td>
+                    <td>{{item.Siblings }}</td>
+                    <td>{{item.Parch }}</td>
+                    <td>{{item.Ticket}}</td>
+                    <td>{{item.Fare}}</td>
+                    <td>{{item.Cabin}}</td>
+                    <td>{{item.Embarked }}</td>
+                </tr>
+                <tr>
+                    <td>{{item.ID}}</td>
+                    <td>{{item.Survived }}</td>
+                    <td>{{item.Class }}</td>
+                    <td>{{item.Name}}</td>
+                    <td>{{item.Sex}}</td>
+                    <td>{{item.Age}}</td>
+                    <td>{{item.Siblings }}</td>
+                    <td>{{item.Parch }}</td>
+                    <td>{{item.Ticket}}</td>
+                    <td>{{item.Fare}}</td>
+                    <td>{{item.Cabin}}</td>
+                    <td>{{item.Embarked }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
